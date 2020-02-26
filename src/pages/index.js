@@ -1,8 +1,9 @@
 import React from "react"
+import { graphql, StaticQuery } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { graphql, StaticQuery } from "gatsby"
+import Post from "../components/post"
 
 const IndexPage = () => (
   <Layout>
@@ -13,7 +14,13 @@ const IndexPage = () => (
       render={data => (
         <div>
           {data.allMarkdownRemark.edges.map(({ node }) => (
-            <div>oi</div>
+            <Post
+              title={node.frontmatter.title}
+              author={node.frontmatter.author}
+              path={node.frontmatter.path}
+              date={node.frontmatter.date}
+              body={node.excerpt}
+            />
           ))}
         </div>
       )}
@@ -23,13 +30,13 @@ const IndexPage = () => (
 
 const indexQuery = graphql`
   query MyQuery {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           id
           frontmatter {
             author
-            date
+            date(formatString: "DD/MM/YYYY")
             title
             path
           }
