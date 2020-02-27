@@ -1,13 +1,5 @@
 import React from "react"
-import {
-  Card,
-  CardBody,
-  CardTitle,
-  Form,
-  FormGroup,
-  Input,
-  Button,
-} from "reactstrap"
+import { Card, CardBody, CardTitle, Form, FormGroup, Input } from "reactstrap"
 import { graphql, StaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
 
