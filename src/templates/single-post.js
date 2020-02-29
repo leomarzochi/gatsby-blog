@@ -31,13 +31,13 @@ const SinglePost = ({ data }) => {
                 dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
               ></div>
               <ul className="post-tags">
-                {post.tags.map((tag, i) => {
-                  ;<li key={i}>
+                {post.tags.map((tag, i) => (
+                  <li key={i}>
                     <Link to={`/tags/${slugify(tag)}`}>
                       <Badge color="primary">{tag}</Badge>
                     </Link>
                   </li>
-                })}
+                ))}
               </ul>
             </CardBody>
           </Card>

@@ -2,7 +2,6 @@
 title: "Second post - test"
 date: 2020-02-01 07:00:00
 author: "God"
-path: "/test-post"
 image: ../../images/gts.jpg
 tags:
   - code

@@ -22,7 +22,7 @@ const IndexPage = () => (
                   key={node.id}
                   title={node.frontmatter.title}
                   author={node.frontmatter.author}
-                  path={node.frontmatter.path}
+                  slug={node.fields.slug}
                   date={node.frontmatter.date}
                   body={node.excerpt}
                   tags={node.frontmatter.tags}
@@ -50,7 +50,6 @@ const indexQuery = graphql`
             author
             date(formatString: "DD/MM/YYYY")
             title
-            path
             tags
             image {
               childImageSharp {
@@ -59,6 +58,9 @@ const indexQuery = graphql`
                 }
               }
             }
+          }
+          fields {
+            slug
           }
           excerpt
         }

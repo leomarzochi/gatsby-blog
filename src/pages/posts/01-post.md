@@ -2,7 +2,6 @@
 title: "First post - test"
 date: 2020-02-03 07:00:00
 author: "Admin"
-path: "/first-post"
 image: ../../images/gts.jpg
 tags:
   - code

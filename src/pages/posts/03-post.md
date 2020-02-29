@@ -2,7 +2,6 @@
 title: "HTML to MD - test"
 date: 2020-01-01 07:00:00
 author: "Leo"
-path: "/html-to-md-post"
 image: ../../images/img1.png
 tags:
   - code
